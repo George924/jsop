@@ -1,12 +1,5 @@
-Student 
+ class Student {
+    constructor(id, nume ,class, )
+ }
 
-id  
-nume 
-varsta 
-nota1 
-nota2
-
-
-salut(); 
-Examen(); 
-callmEDIA();
+  
