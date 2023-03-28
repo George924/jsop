@@ -1,11 +1,32 @@
-class Carte{ constructor(titlu, autor,  pret, editura, culoare, material, an,){
+class Carte{ 
+    static reducere = 10;
+    mypret;
+    constructor(titlu, autor,  , editura, culoare, material, an,nrPagini){
     this.titlu = titlu;
     this.autor = autor;
-    this.pret = pret;
     this.editura = editura;
     this.culoare = culoare;
     this.material = material;
     this.an=an;
+    this.nrPagini = nrPagini;
+    }
+    get pret(){
+        console.log('sunt in getter')
+        return this.pret;
+    }
+    set pret(pretNou){
+        console.log('sunt in setter')
+        if(pretNou <= 0){
+            throw 'Pretul nu poate fi actualziat'
+        }
+        else{
+           this.mypret = pretNou;
+        }
+        
+    }
+    
+    info(){
+        console.log(`Titlul este ${this.titlu}, autor ${this.autor}`);
     }
     deschidCartea(pagina){
         console.log(`Am deschis cartea la pagina ${pagina}`);
@@ -13,20 +34,10 @@ class Carte{ constructor(titlu, autor,  pret, editura, culoare, material, an,){
     randomIntFromInterval(min, max) {
         return Math.floor(Math.random() * (max-min +1) + min)
     }
-    modificaPret(pretNou){
-        if(pretNou <100 && pretNou > this.pret){
-            this.pret = pretNou;
-        }
-    }
-
-    redcuere(procent){
-        this.pret = this.pret - (procent/100* this.pret)
-        this.pret -= (procent * this.pret)/100
-        console.log(`pretul cu reducere este ${this.pret}`);
-    }
+    //pretNou(){
+      //  this.pret = this.pret -( Carte.reducere * this.pret) / 100
+    //}
+    //modificaPret(diferenta){
+       // this.pret = this.pret - diferenta;
+    //}
 }
-
-const carte = new Carte('Poezii', 'M. Eminescu','All',2010, 50);
-carte.modificaPret (75);
-
-console.log(carte);
