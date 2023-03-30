@@ -29,11 +29,12 @@ class NewUser{
         return this._email;
     }
     
-    mananca (claorii){
+    mananca (calorii){
         console.log(`Mananca ${claorii} pe zi.`);
     }
     doarme(ore){
         console.log(`Doarme ${ore} ore pe zi`);
+        console.log(`Parola mea este${this.password}`);
     }
 
 }
@@ -45,6 +46,7 @@ class Abonat extends NewUser{
     }
     info (){
         console.log(`Numele meu este ${this.nume} cu adresa de email ${this.email}`);
+        //console.log(`Parola mea este${this.password}`);
     }
    
 }
